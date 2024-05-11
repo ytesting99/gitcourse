@@ -32,3 +32,25 @@ def delete_item(item_id: int):
     conn.commit()
     return {"message": "Item deleted"}
 ```
+- Read items API route
+```python
+@app.get("/items/")
+def read_items():
+    conn = get_db()
+    items = conn.execute("SELECT * FROM items").fetchall()
+    return [
+        dict(item) for item in items]
+```
+- Read item API route
+```python
+@app.get("/items/{item_id}")
+def read_item(item_id:int):
+    conn = get_db()
+    item = conn.execute("SELECT * FROM items WHERE id = ?", (item_id,)).fetchone()
+    if item is None:
+        raise HTTPException(
+            status_code=404, 
+    detail="Item not found"
+            )
+    return dict(item)
+```
