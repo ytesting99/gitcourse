@@ -54,3 +54,7 @@ def read_item(item_id:int):
             )
     return dict(item)
 ```
+
+## Conventional commit styles
+
+![commit styles](./img/comimt-style.png)
