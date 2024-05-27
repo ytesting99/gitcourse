@@ -81,6 +81,42 @@ def read_item(item_id:int):
             )
     return dict(item)
 ```
+- Count offers API route
+```python
+@app.get("/items/count/")
+def count_items():
+    """
+    API route to count the total number of items.
+
+    Returns
+    -------
+    dict
+        A dictionary containing the total count of items.
+    """
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT COUNT(*) FROM items")
+    count = cursor.fetchone()[0]
+    return {"count": count}
+```
+- Retrieve offers API route
+```python
+@app.get("/items/offers/")
+def get_offer_items():
+    """
+    API route to get all items that are offers.
+
+    Returns
+    -------
+    List[Item]
+        A list of items that are offers.
+    """
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, name, price, is_offer FROM items WHERE is_offer = 1")
+    rows = cursor.fetchall()
+    return [Item(id=row[0], name=row[1], price=row[2], is_offer=bool(row[3])) for row in rows]
+```
 
 ## Conventional commit styles
 
