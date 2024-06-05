@@ -208,7 +208,7 @@ print(f"Rolled: {roll_die}")
 import random
 
 def roll_die():
-    return random.randint(0, 6)
+    return random.randint(1, 6)
 
 print("Dice simulator")
 print(f"Rolled: {roll_die()}") # The function was not called in previous code!
