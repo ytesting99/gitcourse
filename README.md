@@ -280,7 +280,7 @@ print(f"Rolled: {results}")
 ```
 </details>
 
-## Step 6: Saving results to a file
+## (optional) Step 6: Saving results to a file
 
 From now on, the steps are suggestions for further development!
 
@@ -325,7 +325,7 @@ print("Thank you for using the simulator")
 ```
 </details>
 
-## Step 7: Command Line Interface (CLI)
+## (optional) Step 7: Command Line Interface (CLI)
 **Features**
 - Allow users to specify the number of dice and sides through command line arguments.
 
@@ -376,7 +376,7 @@ if __name__ == "__main__":
 ```
 </details>
 
-## Step 8: Unit testing
+## (optional) Step 8: Unit testing
 **Features**
 - Write unit tests for the dice rolling functions.
 - Ensure all tests pass.
@@ -424,7 +424,7 @@ if __name__ == "__main__":
 </details>
 
 
-## Step 10: Documentation
+## (optional) Step 10: Documentation
 **Features**
 - Create a README file with instructions on how to use the dice simulator.
 - Add comments and docstrings to the code for better understanding.
